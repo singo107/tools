@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry
+		location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.17\mysql-connector-java-5.1.17.jar" />
+
+	<context id="MySqlTables" targetRuntime="MyBatis3">
+
+		<!-- 避免添加注释 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<!-- jdbc配置 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://172.16.233.214:3306/account" userId="root"
+			password="root">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetPackage:包路径，targetProject:所在项目的名称 -->
+		<!-- model配置 -->
+		<javaModelGenerator targetPackage="com.glodon.paas.account.dao.domain"
+			targetProject="e:">
+			<property name="enableSubPackages" value="true" />
+		</javaModelGenerator>
+
+		<!-- xml配置文件 -->
+		<sqlMapGenerator targetPackage="com.glodon.paas.account.dao.mapper"
+			targetProject="e:">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!--接口 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.glodon.paas.account.dao.mapper" targetProject="e:">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- 避免Example类 -->
+		<table schema="account" tableName="account_user"
+			domainObjectName="AccountUserEntity" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" />
+	</context>
+
+</generatorConfiguration>  
