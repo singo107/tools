@@ -26,20 +26,20 @@
 
 		<!-- targetPackage:包路径，targetProject:所在项目的名称 -->
 		<!-- model配置 -->
-		<javaModelGenerator targetPackage="com.glodon.paas.account.dao.domain"
+		<javaModelGenerator targetPackage="cn.flus.account.core.entity"
 			targetProject="e:">
 			<property name="enableSubPackages" value="true" />
 		</javaModelGenerator>
 
 		<!-- xml配置文件 -->
-		<sqlMapGenerator targetPackage="com.glodon.paas.account.dao.mapper"
+		<sqlMapGenerator targetPackage="cn.flus.account.core.dao.mapper"
 			targetProject="e:">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 
 		<!--接口 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.glodon.paas.account.dao.mapper" targetProject="e:">
+			targetPackage="cn.flus.account.core.dao.mapper" targetProject="e:">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
