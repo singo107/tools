@@ -16,7 +16,7 @@
 
 		<!-- jdbc配置 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://172.16.233.214:3306/account" userId="root"
+			connectionURL="jdbc:mysql://172.16.233.214:3306/apm" userId="root"
 			password="root">
 		</jdbcConnection>
 
@@ -26,28 +26,28 @@
 
 		<!-- targetPackage:包路径，targetProject:所在项目的名称 -->
 		<!-- model配置 -->
-		<javaModelGenerator targetPackage="cn.flus.account.core.entity"
+		<javaModelGenerator targetPackage="com.glodon.paas.apm.core.dao.domain"
 			targetProject="e:">
 			<property name="enableSubPackages" value="true" />
 		</javaModelGenerator>
 
 		<!-- xml配置文件 -->
-		<sqlMapGenerator targetPackage="cn.flus.account.core.dao.mapper"
+		<sqlMapGenerator targetPackage="com.glodon.paas.apm.core.dao.mapper"
 			targetProject="e:">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 
 		<!--接口 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="cn.flus.account.core.dao.mapper" targetProject="e:">
+			targetPackage="com.glodon.paas.apm.core.dao.mapper" targetProject="e:">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
 		<!-- 避免Example类 -->
-		<table schema="account" tableName="account_user"
-			domainObjectName="AccountUserEntity" enableCountByExample="false"
-			enableUpdateByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" selectByExampleQueryId="false" />
+		<table schema="account" tableName="api_main" domainObjectName="ApiMainEntity"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" />
 	</context>
 
 </generatorConfiguration>  
