@@ -16,7 +16,7 @@
 
 		<!-- jdbc配置 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://172.16.233.214:3306/apm" userId="root"
+			connectionURL="jdbc:mysql://127.0.0.1:3306/flus_cms" userId="root"
 			password="root">
 		</jdbcConnection>
 
@@ -26,25 +26,40 @@
 
 		<!-- targetPackage:包路径，targetProject:所在项目的名称 -->
 		<!-- model配置 -->
-		<javaModelGenerator targetPackage="com.glodon.paas.apm.core.dao.domain"
+		<javaModelGenerator targetPackage="cn.flus.cms.core.dao.domain"
 			targetProject="e:">
 			<property name="enableSubPackages" value="true" />
 		</javaModelGenerator>
 
 		<!-- xml配置文件 -->
-		<sqlMapGenerator targetPackage="com.glodon.paas.apm.core.dao.mapper"
+		<sqlMapGenerator targetPackage="cn.flus.cms.core.dao.mapper"
 			targetProject="e:">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 
 		<!--接口 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.glodon.paas.apm.core.dao.mapper" targetProject="e:">
+			targetPackage="cn.flus.cms.core.dao.mapper" targetProject="e:">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
 		<!-- 避免Example类 -->
-		<table schema="account" tableName="api_main" domainObjectName="ApiMainEntity"
+		<table schema="flus_cms" tableName="attachment"
+			domainObjectName="AttachmentEntity" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" />
+
+		<table schema="flus_cms" tableName="category" domainObjectName="CategoryEntity"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" />
+
+		<table schema="flus_cms" tableName="reply" domainObjectName="ReplyEntity"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" />
+
+		<table schema="flus_cms" tableName="topic" domainObjectName="TopicEntity"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" />
